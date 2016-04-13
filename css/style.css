@@ -1,0 +1,60 @@
+
+/*font-family: 'Abel', sans-serif;
+font-family: 'Bitter', serif;*/
+
+
+html {
+	box-sizing: border-box;
+	-web-font-smoothing: antialiased;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+	font-family: 'Bitter', serif;
+}
+
+.title-page {
+	border: .7em solid black;
+	height: 46em;
+	width: 100%;
+	background-image: url(https://www.rmiguides.com/_includes/_images/rainier_skitouring_full.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+#title {
+	font-weight: 700;
+	padding-top: 5em;
+	padding-left: 2em;
+	padding-bottom: 8em;
+	text-shadow: 2px 2px white;
+}
+
+#quizstart {
+	border-radius: 15px;
+	border: 2px solid white;
+	margin-left: 43%;
+	height: 4em;
+	width: 10em;
+	background-color: black;
+	color: white;
+	font-size: 1em;
+}
+
+#quizstart:hover {
+	background-color: #9F2226;
+}
+
+#quizstart:active {
+	background-color: black;
+}
+
+button:focus {
+	outline: 0;
+}
+
+
+
