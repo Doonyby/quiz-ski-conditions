@@ -38,25 +38,26 @@ quiz.questions[0].question
 quiz.questions[0].answers[quiz.questions[0].correct]
 
 $(document).ready(function() {
-	console.log("I'm a title page");
 	$('.title-page').show();
 	$('.quiz-page').hide();
 	$('.score-page').hide();
 
 	$('#quizstart').click(function() {
-		console.log("I'm a quiz page");
 		$('.title-page').hide();
 		$('.quiz-page').show();
 		$('.score-page').hide();
+		$('#question').text(quiz.questions[0].question);
+		$('#guesses').append('<input id="guess-select" type="radio" name="0" value= "answer 1">' + quiz.questions[0].answers[0] + '<br>');
+		$('#guesses').append('<input id="guess-select" type="radio" name="0" value= "answer 1">' + quiz.questions[0].answers[1] + '<br>');
+		$('#guesses').append('<input id="guess-select" type="radio" name="0" value= "answer 1">' + quiz.questions[0].answers[2] + '<br>');
+		$('#guesses').append('<input id="guess-select" type="radio" name="0" value= "answer 1">' + quiz.questions[0].answers[3] + '<br>');
 	});
 
 	$('input').click(function() {
-		console.log("I'm a score page");
 		$('.title-page').hide();
 		$('.quiz-page').hide();
 		$('.score-page').show();
 		$('#tryagain').click(function() {
-			console.log("I'm a quiz page");
 			$('.title-page').hide();
 			$('.quiz-page').show();
 			$('.score-page').hide();
