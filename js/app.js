@@ -1,16 +1,36 @@
 var quiz = {
-	name: "Back country snow conditions",
+	name: "Back country avalanche conditions challenge!",
 	questions: [
 		{
 			question: "What is snow?",
-			answers: ["rain", "ice", "frozen rain"],
+			answers: ["rain", "ice", "frozen rain", "cheese"],
 			correct: 2
+			explanation: "Frozen rain is snow."
 		},
 		{
 			question: "What is snow?",
-			answers: ["rain", "ice", "frozen rain"],
+			answers: ["rain", "ice", "frozen rain", "cheese"],
 			correct: 2
-		}
+			explanation: "Frozen rain is snow."
+		},
+		{
+			question: "What slope degree should you start worrying about possible avalanche danger?",
+			answers: ["20", "30", "40", "45"],
+			correct: 1
+			explanation: "Usually, slopes less than 30 degrees are not a danger when assessing for avalanches.  The typical window for slop angle avalanche danger falls between 30 and 40 degrees."
+		},
+		{
+			question: "What factor is not included when testing for snow stability with an avalanche pit test?",
+			answers: ["Strength", "Energy", "Structure", "Terrain"],
+			correct: 3
+			explanation: ""
+		},
+		{
+			question: "What is snow?",
+			answers: ["rain", "ice", "frozen rain", "cheese"],
+			correct: 2
+			explanation: "Frozen rain is snow."
+		},
 	]
 }
 
