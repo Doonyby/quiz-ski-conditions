@@ -44,11 +44,26 @@ body {
 	font-size: 1em;
 }
 
-#quizstart:hover {
-	background-color: #9F2226;
+#tryagain,
+#nextquestion {
+	border-radius: 15px;
+	border: 2px solid white;
+	height: 2em;
+	width: 8em;
+	background-color: black;
+	color: white;
+	font-size: 1em;
 }
 
-#quizstart:active {
+#quizstart:hover,
+#tryagain:hover,
+#nextquestion:hover {
+	background-color: #8D0018;
+}
+
+#quizstart:active,
+#tryagain:active,
+#nextquestion:active {
 	background-color: black;
 }
 
@@ -56,5 +71,40 @@ button:focus {
 	outline: 0;
 }
 
+.quiz-page,
+.score-page {
+	height: 46em;
+	background-color: black;
+}
+
+.quiz-page-center,
+.score-page-center {
+	background-image: url(http://image.naldzgraphics.net/2012/09/29-close-up.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	width: 60em;
+	margin: 0 auto auto;
+	text-align: center;
+	padding-top: 5em;
+	border: 3em solid black;
+	height: 46em;
+}
+
+#question {
+	padding-bottom: 1em;
+}
+
+input[type=radio] {
+	margin-bottom: 1em;
+}
+
+#explanation {
+	padding-top: 2em;
+}
+
+#score {
+	padding-top: 3em;
+	padding-bottom: 4em;
+}
 
 
