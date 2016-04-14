@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link href='https://fonts.googleapis.com/css?family=Bitter:400,400italic,700|Abel' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 	<script src="http://code.jquery.com/jquery.min.js"></script>
     <script src="js/app.js"></script>
 </head>
@@ -23,7 +24,10 @@
 			  <input id="guess-select" type="radio" name="2" value= "answer 3"> Answer 3 <br>
 			  <input id="guess-select" type="radio" name="3" value= "answer 4"> Answer 4 <br>
 			</form>
-			<p id="explanation">Snow will be snow.</p>
+			<ul>
+				<li><i class="fa fa-circle fa-2x" aria-hidden="true" id="circle"></i></li>
+				<li><p id="explanation">Snow will be snow.</p></li>
+			</ul>
 			<button id="nextquestion">Next Question</button>
 		</div>
 	</div>

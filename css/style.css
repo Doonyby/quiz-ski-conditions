@@ -55,6 +55,10 @@ body {
 	font-size: 1em;
 }
 
+#nextquestion {
+	margin-top: 2em
+}
+
 #quizstart:hover,
 #tryagain:hover,
 #nextquestion:hover {
@@ -105,6 +109,16 @@ input[type=radio] {
 #score {
 	padding-top: 3em;
 	padding-bottom: 4em;
+}
+
+li {
+	display: inline-block;
+}
+
+#circle {
+	height: 30px;
+	width: 30px;
+	padding-right: 2em;
 }
 
 
