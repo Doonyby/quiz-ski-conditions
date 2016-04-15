@@ -46,14 +46,20 @@ $(document).ready(function() {
 		$('.title-page').hide();
 		$('.quiz-page').show();
 		$('.score-page').hide();
+		$('#post-question').hide();
 		$('#question').text(quiz.questions[0].question);
-		$('#guesses').append('<input id="guess-select" type="radio" name="0" value= "answer 1">' + quiz.questions[0].answers[0] + '<br>');
-		$('#guesses').append('<input id="guess-select" type="radio" name="0" value= "answer 1">' + quiz.questions[0].answers[1] + '<br>');
-		$('#guesses').append('<input id="guess-select" type="radio" name="0" value= "answer 1">' + quiz.questions[0].answers[2] + '<br>');
-		$('#guesses').append('<input id="guess-select" type="radio" name="0" value= "answer 1">' + quiz.questions[0].answers[3] + '<br>');
+		var questionsLen = quiz.questions.length;
+		var answersLen = quiz.questions[0].answers.length;
+		var input = '<input id="guess-select" type="radio" name="select" value="i">';
+		for (var i = 0; i < answersLen; i++) {
+			$('#guesses').append(input + quiz.questions[0].answers[i] + '<br>');
+		};
+		guessedAnswer();
 	});
 
-	$('input').click(function() {
+
+
+	$('#nextquestion').click(function() {
 		$('.title-page').hide();
 		$('.quiz-page').hide();
 		$('.score-page').show();
@@ -63,7 +69,14 @@ $(document).ready(function() {
 			$('.score-page').hide();
 			});
 	});
-
+		function guessedAnswer() {
+			$('input').click(function() {
+				$('#post-question').show();
+				$('#explanation').text(quiz.questions[0].explanation);
+				
+			});	
+			
+		}
 
 
 
