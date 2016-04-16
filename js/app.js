@@ -34,54 +34,67 @@ var quiz = {
 	]
 }
 
-quiz.questions[0].question
-quiz.questions[0].answers[quiz.questions[0].correct]
 
 $(document).ready(function() {
 	$('.title-page').show();
 	$('.quiz-page').hide();
 	$('.score-page').hide();
-
+	var questionsLen = quiz.questions.length;
+	var currentQuestion = 0;
 
 	$('#quizstart').click(function() {
 		$('.title-page').hide();
 		$('.quiz-page').show();
 		$('.score-page').hide();
 		$('#post-question').hide();
-		var questionsLen = quiz.questions.length;
-		for (var j = 0; j < questionsLen; j++) {
-			$('#question').text(quiz.questions[j].question);
-			var answersLen = quiz.questions[j].answers.length;
-			var input = '<input id="guess-select" type="radio" name="select" value="i">';
-			for (var i = 0; i < answersLen; i++) {
-				$('#guesses').append(input + quiz.questions[j].answers[i] + '<br>');
-			};
-			guessedAnswer();
-		};	
+
+		showQuestion(currentQuestion);
 	});
+
+	function showQuestion(currentQuestion) {
+		var questionText = '<h1>' + quiz.questions[currentQuestion].question + '</h1>';
+		questionText += '<form id="guesses"></form>';
+		$('#displayQuestion').append(questionText);
+
+		var answersLen = quiz.questions[currentQuestion].answers.length;
+		for (var i = 0; i < answersLen; i++) {
+			var input = '<input id="guess-select" type="radio" name="select" value="' + i +'">';
+			$('#guesses').append(input + quiz.questions[currentQuestion].answers[i] + '<br>');
+		};
+		guessedAnswer();
+	}	
+
+	$('#nextquestion').click(function() {
+		// $('.title-page').hide();
+		// $('.quiz-page').hide();
+		// $('.score-page').show();	
+		currentQuestion++
+		$('#displayQuestion').empty();
+		if (currentQuestion < questionsLen) {
+			showQuestion(currentQuestion);
+		} else {
+			$('.title-page').hide();
+			$('.quiz-page').hide();
+			$('.score-page').show();			
+		}
+	});	
+
+	$('#tryagain').click(function() {
+		$('.title-page').hide();
+		$('.quiz-page').show();
+		$('.score-page').hide();
+		currentQuestion = 0;
+	});
+
+	function guessedAnswer() {
+		$('input').click(function() {
+			$('#post-question').show();
+			$('#explanation').text(quiz.questions[0].explanation);				
+		});	
+	};	
 
 });		
 
-
-	/*$('#nextquestion').click(function() {
-		$('.title-page').hide();
-		$('.quiz-page').hide();
-		$('.score-page').show();
-	}*/	
-
-		$('#tryagain').click(function() {
-			$('.title-page').hide();
-			$('.quiz-page').show();
-			$('.score-page').hide();
-			});
-
-		function guessedAnswer() {
-			$('input').click(function() {
-				$('#post-question').show();
-				$('#explanation').text(quiz.questions[0].explanation);
-				
-			});	
-		};	
 
 
 
