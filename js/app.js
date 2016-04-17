@@ -86,14 +86,15 @@ $(document).ready(function() {
 
 	function guessedAnswer() {
 		var explain = quiz.questions[currentQuestion].explanation;
-		var selected = quiz.questions[currentQuestion].answers.indexOf;
 		$('input').click(function() {
 			$('#post-question').show();
 			$('#explanation').text(explain);
-			if (this.value = quiz.questions[currentQuestion].correct) {
-				console.log("correct");
+			if (this.value == quiz.questions[currentQuestion].correct) {
+				$('#circle').css('color', '#00FF3F');
+				$('#circle').text('  Correct!');
 			} else {
-				console.log("incorrect");
+				$('#circle').css('color', '#8D0018');
+				$('#circle').text('  Incorrect');
 			}
 
 		});	
