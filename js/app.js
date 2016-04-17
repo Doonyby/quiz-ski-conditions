@@ -17,7 +17,7 @@ var quiz = {
 			question: "What slope degree should you start worrying about possible avalanche danger?",
 			answers: ["20", "30", "40", "45"],
 			correct: 1,
-			explanation: "Usually, slopes less than 30 degrees are not a danger when assessing for avalanches.  The typical window for slop angle avalanche danger falls between 30 and 40 degrees.",
+			explanation: "Usually, slopes less than 30 degrees are not a danger when assessing for avalanches.  The typical window for slope angle avalanche danger falls between 30 and 40 degrees.",
 		},
 		{
 			question: "What factor is not included when testing for snow stability with an avalanche pit test?",
@@ -86,9 +86,16 @@ $(document).ready(function() {
 
 	function guessedAnswer() {
 		var explain = quiz.questions[currentQuestion].explanation;
+		var selected = quiz.questions[currentQuestion].answers.indexOf;
 		$('input').click(function() {
 			$('#post-question').show();
-			$('#explanation').text(explain);				
+			$('#explanation').text(explain);
+			if (this.value = quiz.questions[currentQuestion].correct) {
+				console.log("correct");
+			} else {
+				console.log("incorrect");
+			}
+
 		});	
 	};	
 
