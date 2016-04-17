@@ -58,18 +58,16 @@ $(document).ready(function() {
 
 		var answersLen = quiz.questions[currentQuestion].answers.length;
 		for (var i = 0; i < answersLen; i++) {
-			var input = '<input id="guess-select" type="radio" name="select" value="' + i +'">';
+			var input = '<input id="guess-select" type="radio" name="select" value="' + i + '">';
 			$('#guesses').append(input + quiz.questions[currentQuestion].answers[i] + '<br>');
 		};
 		guessedAnswer();
 	}	
 
 	$('#nextquestion').click(function() {
-		// $('.title-page').hide();
-		// $('.quiz-page').hide();
-		// $('.score-page').show();	
 		currentQuestion++
 		$('#displayQuestion').empty();
+		$('#post-question').hide();
 		if (currentQuestion < questionsLen) {
 			showQuestion(currentQuestion);
 		} else {
@@ -87,9 +85,10 @@ $(document).ready(function() {
 	});
 
 	function guessedAnswer() {
+		var explain = quiz.questions[currentQuestion].explanation;
 		$('input').click(function() {
 			$('#post-question').show();
-			$('#explanation').text(quiz.questions[0].explanation);				
+			$('#explanation').text(explain);				
 		});	
 	};	
 
