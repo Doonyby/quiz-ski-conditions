@@ -100,10 +100,12 @@ button:focus {
 
 input[type=radio] {
 	margin-bottom: 1em;
+	text-align: left;
 }
 
 #explanation {
-	padding-top: 2em;
+	padding-top: 1em;
+	width: 20em;
 }
 
 #score {
@@ -117,6 +119,7 @@ li {
 
 #circle {
 	padding-right: 1em;
+	margin-top: -2em;
 }
 
 

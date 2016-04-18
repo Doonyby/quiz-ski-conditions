@@ -78,12 +78,6 @@ $(document).ready(function() {
 		}
 	});	
 
-	/*$('#tryagain').click(function() {
-		$('.title-page').hide();
-		$('#displayQuestion').show();
-		$('.score-page').hide();
-		currentQuestion = 0;
-	});*/
 
 		var counter = 0;
 
