@@ -42,12 +42,13 @@ $(document).ready(function() {
 	var questionsLen = quiz.questions.length;
 	var currentQuestion = 0;
 
-	$('#quizstart').click(function() {
+	$('#quizstart,#tryagain').click(function() {
 		$('.title-page').hide();
 		$('.quiz-page').show();
 		$('.score-page').hide();
 		$('#post-question').hide();
-
+		currentQuestion = 0;
+		counter = 0;
 		showQuestion(currentQuestion);
 	});
 
@@ -77,12 +78,14 @@ $(document).ready(function() {
 		}
 	});	
 
-	$('#tryagain').click(function() {
+	/*$('#tryagain').click(function() {
 		$('.title-page').hide();
-		$('.quiz-page').show();
+		$('#displayQuestion').show();
 		$('.score-page').hide();
 		currentQuestion = 0;
-	});
+	});*/
+
+		var counter = 0;
 
 	function guessedAnswer() {
 		var explain = quiz.questions[currentQuestion].explanation;
@@ -92,11 +95,13 @@ $(document).ready(function() {
 			if (this.value == quiz.questions[currentQuestion].correct) {
 				$('#circle').css('color', '#00FF3F');
 				$('#circle').text('  Correct!');
+				counter++;
+				console.log(counter);
 			} else {
 				$('#circle').css('color', '#8D0018');
 				$('#circle').text('  Incorrect');
 			}
-
+			$('#score').text("You got " + counter + "/5 correct!");
 		});	
 	};	
 
