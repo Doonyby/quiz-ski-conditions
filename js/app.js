@@ -90,8 +90,8 @@ $(document).ready(function() {
 			if (this.value == quiz.questions[currentQuestion].correct) {
 				$('#circle').css('color', '#00FF3F');
 				$('#circle').text('  Correct!');
-				counter++;
-				console.log(counter);
+				score++;
+				console.log(score);
 			} else {
 				$('#circle').css('color', '#8D0018');
 				$('#circle').text('  Incorrect');
