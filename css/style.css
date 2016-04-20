@@ -88,24 +88,41 @@ button:focus {
 	background-size: 100% 100%;
 	width: 60em;
 	margin: 0 auto auto;
-	text-align: center;
 	padding-top: 5em;
 	border: 3em solid black;
 	height: 46em;
 }
 
-#question {
-	padding-bottom: 1em;
+input[class=guess-select] {
+	margin-bottom: 1em;
+	margin-right: .5em;
 }
 
-input[type=radio] {
+#guesses {
 	margin-bottom: 1em;
-	text-align: left;
+	margin-left: 43%;
+}
+
+#displayQuestion {
+	margin-bottom: 1em;
+	
+}
+
+.quiz-page-center h1 {
+	text-align: center;
 }
 
 #explanation {
 	padding-top: 1em;
 	width: 20em;
+}
+
+#post-question {
+	text-align: center;
+}
+
+.score-page {
+	text-align: center;
 }
 
 #score {

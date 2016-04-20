@@ -48,7 +48,7 @@ $(document).ready(function() {
 		$('.score-page').hide();
 		$('#post-question').hide();
 		currentQuestion = 0;
-		counter = 0;
+		score = 0;
 		showQuestion(currentQuestion);
 	});
 
@@ -59,7 +59,7 @@ $(document).ready(function() {
 
 		var answersLen = quiz.questions[currentQuestion].answers.length;
 		for (var i = 0; i < answersLen; i++) {
-			var input = '<input id="guess-select" type="radio" name="select" value="' + i + '">';
+			var input = '<input class="guess-select" type="radio" name="select" value="' + i + '">';
 			$('#guesses').append(input + quiz.questions[currentQuestion].answers[i] + '<br>');
 		};
 		guessedAnswer();
@@ -79,13 +79,14 @@ $(document).ready(function() {
 	});	
 
 
-		var counter = 0;
+		var score = 0;
 
 	function guessedAnswer() {
 		var explain = quiz.questions[currentQuestion].explanation;
 		$('input').click(function() {
 			$('#post-question').show();
 			$('#explanation').text(explain);
+			$('.guess-select').hide();
 			if (this.value == quiz.questions[currentQuestion].correct) {
 				$('#circle').css('color', '#00FF3F');
 				$('#circle').text('  Correct!');
@@ -95,7 +96,7 @@ $(document).ready(function() {
 				$('#circle').css('color', '#8D0018');
 				$('#circle').text('  Incorrect');
 			}
-			$('#score').text("You got " + counter + "/5 correct!");
+			$('#score').text("You got " + score + "/5 correct!");
 		});	
 	};	
 
