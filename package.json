@@ -1,0 +1,28 @@
+{
+  "name": "quiz-ski-conditions",
+  "version": "1.0.0",
+  "description": "object based quiz model",
+  "main": "index.html",
+  "scripts": {
+    "mkdir": "mkdir -p build",
+    "build": "npm run clean && npm run mkdir && npm run build:html",
+    "watch": "npm run watch:html",
+    "clean": "rm -rf build",
+    "build:html": "npm run clean:html && cp index.html build/",
+    "watch:html": "npm run build:html && chokidar index.html -c 'npm run build:html'",
+    "clean:html": "rm -f build/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Doonyby/quiz-ski-conditions.git"
+  },
+  "author": "dan riding",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Doonyby/quiz-ski-conditions/issues"
+  },
+  "homepage": "https://github.com/Doonyby/quiz-ski-conditions#readme",
+  "devDependencies": {
+    "chokidar-cli": "^1.2.0"
+  }
+}
