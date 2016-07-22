@@ -1,6 +1,13 @@
-
 /*font-family: 'Abel', sans-serif;
 font-family: 'Bitter', serif;*/
+@black: #1E2835;
+@white: #F8F8F8;
+@bitter: 'Bitter', serif;
+@dark-red: #8D0018;
+@red: lighten(@dark-red, 20%);
+@white-shadow: 2px 2px white;
+@button-border: 2px solid white;
+
 
 
 html {
@@ -13,7 +20,7 @@ html {
 }
 
 body {
-	font-family: 'Bitter', serif;
+	font-family: @bitter;
 }
 
 .title-page {
@@ -23,35 +30,33 @@ body {
 	background-image: url(https://www.rmiguides.com/_includes/_images/rainier_skitouring_full.jpg);
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
-}
-
-#title {
-	font-weight: 700;
-	padding-top: 5em;
-	padding-left: 2em;
-	padding-bottom: 8em;
-	text-shadow: 2px 2px white;
-}
-
-#quizstart {
-	border-radius: 15px;
-	border: 2px solid white;
-	margin-left: 43%;
-	height: 4em;
-	width: 10em;
-	background-color: black;
-	color: white;
-	font-size: 1em;
+	#title {
+		font-weight: 700;
+		padding-top: 5em;
+		padding-left: 2em;
+		padding-bottom: 8em;
+		text-shadow: @white-shadow;
+	}
+	#quizstart {
+		border-radius: 15px;
+		border: @button-border;
+		margin-left: 43%;
+		height: 4em;
+		width: 10em;
+		background-color: @black;
+		color: @white;
+		font-size: 1em;
+	}
 }
 
 #tryagain,
 #nextquestion {
 	border-radius: 15px;
-	border: 2px solid white;
+	border: @button-border;
 	height: 2em;
 	width: 8em;
-	background-color: black;
-	color: white;
+	background-color: @black;
+	color: @white;
 	font-size: 1em;
 }
 
@@ -62,13 +67,13 @@ body {
 #quizstart:hover,
 #tryagain:hover,
 #nextquestion:hover {
-	background-color: #8D0018;
+	background-color: @dark-red;
 }
 
 #quizstart:active,
 #tryagain:active,
 #nextquestion:active {
-	background-color: black;
+	background-color: @red;
 }
 
 button:focus {
@@ -78,7 +83,7 @@ button:focus {
 .quiz-page,
 .score-page {
 	height: 46em;
-	background-color: black;
+	background-color: @black;
 }
 
 .quiz-page-center,
@@ -89,7 +94,7 @@ button:focus {
 	width: 60em;
 	margin: 0 auto auto;
 	padding-top: 5em;
-	border: 3em solid black;
+	border: 3em solid @black;
 	height: 46em;
 }
 
@@ -105,11 +110,15 @@ input[class=guess-select] {
 
 #displayQuestion {
 	margin-bottom: 1em;
+	h1 {
+		text-shadow: @white-shadow;
+	}
 	
 }
 
 .quiz-page-center h1 {
 	text-align: center;
+
 }
 
 #explanation {
@@ -119,6 +128,9 @@ input[class=guess-select] {
 
 #post-question {
 	text-align: center;
+	li {
+		display: inline-block;
+	}
 }
 
 .score-page {
@@ -128,15 +140,12 @@ input[class=guess-select] {
 #score {
 	padding-top: 3em;
 	padding-bottom: 4em;
+	text-shadow: @white-shadow;
 }
 
-li {
-	display: inline-block;
-}
+
 
 #circle {
 	padding-right: 1em;
 	margin-top: -2em;
 }
-
-
