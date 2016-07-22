@@ -40,8 +40,8 @@ var backCountrySkiQuiz = function() {
 	$('.title-page').show();
 	$('.quiz-page').hide();
 	$('.score-page').hide();
-	var questionsLen = quiz.questions.length;
-	var currentQuestion = 0;
+	let questionsLen = quiz.questions.length;
+	let currentQuestion = 0;
 
 	$('#quizstart,#tryagain').click(function() {
 		$('.title-page').hide();
@@ -54,13 +54,13 @@ var backCountrySkiQuiz = function() {
 	});
 
 	function showQuestion(currentQuestion) {
-		var questionText = '<h1>' + quiz.questions[currentQuestion].question + '</h1>';
+		let questionText = '<h1>' + quiz.questions[currentQuestion].question + '</h1>';
 		questionText += '<form id="guesses"></form>';
 		$('#displayQuestion').append(questionText);
 
-		var answersLen = quiz.questions[currentQuestion].answers.length;
+		let answersLen = quiz.questions[currentQuestion].answers.length;
 		for (var i = 0; i < answersLen; i++) {
-			var input = '<input class="guess-select" type="radio" name="select" value="' + i + '">';
+			let input = '<input class="guess-select" type="radio" name="select" value="' + i + '">';
 			$('#guesses').append(input + quiz.questions[currentQuestion].answers[i] + '<br>');
 		};
 		guessedAnswer();
@@ -79,10 +79,10 @@ var backCountrySkiQuiz = function() {
 		}
 	});	
 	
-		var score = 0;
+		let score = 0;
 
 	function guessedAnswer() {
-		var explain = quiz.questions[currentQuestion].explanation;
+		let explain = quiz.questions[currentQuestion].explanation;
 		$('input').click(function() {
 			$('#post-question').show();
 			$('#explanation').text(explain);
