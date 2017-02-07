@@ -30,7 +30,8 @@ module.exports = {
           query: {
             presets: ['es2015']
           }
-        }
+        },
+        { test: /\.css$/, loader: "style!css" }
       ]
     },
     plugins: plugins
